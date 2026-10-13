@@ -1,0 +1,43 @@
+name: "업무자동화 상담 (공개)"
+description: "비식별 업무 문제에 대한 공개 상담 요청 (연락처/주문정보 금지)"
+title: "[상담] "
+labels: ["consultation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        이 상담은 공개 GitHub 이슈로 등록됩니다. 연락처, 사업자번호, 주문내역, 고객명, 주소, 전화번호, 비밀번호 등 개인정보·민감 자료는 절대 올리지 마세요. 실제 주문/수금 처리 전에는 별도 동의와 계약이 필요합니다.
+  - type: dropdown
+    id: business
+    attributes:
+      label: "업무 종류"
+      options:
+        - 주문서 CSV 정리
+        - 엑셀 서식 통합
+        - 중복·오류 표시
+        - 재고/매출 집계 초안
+        - 기타
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: "반복해서 어려운 업무 (개인정보 없이)"
+      description: "어떤 수작업을 반복하는지, 주 몇 회 진행하는지 적어 주세요."
+      placeholder: "예: 매주 주문서를 다운받아 주문번호가 중복된 행만 따로 확인합니다."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "원하는 출력물"
+      description: "예: 중복 의심행 표시한 CSV, 주간 요약표"
+    validations:
+      required: true
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: "공개 상담 개인정보 주의"
+      options:
+        - label: "연락처/고객정보/로그인 정보/실제 주문서를 이 공개 이슈에 기재하지 않았습니다."
+          required: true

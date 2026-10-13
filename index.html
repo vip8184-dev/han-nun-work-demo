@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#121f3e">
+<title>한눈업무 | 주문서 자동정리 시제품</title>
+<style>
+:root{--navy:#172444;--blue:#314cc0;--teal:#0f766e;--ink:#243049;--muted:#60708c;--line:#dbe2ee;--cream:#f6f8fd;--white:#fff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Pretendard,'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}a{color:inherit}header{background:var(--navy);color:white;padding:15px 20px}header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}.mark{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.5px}.logo{width:32px;height:32px;border-radius:10px;background:linear-gradient(145deg,#79e9cb,#a7b4ff);display:grid;place-items:center;color:#15213e}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.1em;color:#bfcbff}.nav-note{font-size:12px;color:#bbcae8}.hero{background:radial-gradient(circle at 92% 0%,#4965ce 0%,#25386d 42%,#172444 82%);color:white;padding:64px 0 60px}.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.24;letter-spacing:-2px;max-width:850px;margin:15px 0}.hero p{max-width:710px;font-size:16px;color:#dbe4fc}.pills{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.pill{font-size:12px;border:1px solid #9eafe0;background:#ffffff16;border-radius:30px;padding:7px 12px}.btn{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font:inherit;font-weight:800;border-radius:12px;min-height:44px;padding:10px 17px;border:1px solid transparent}.btn-primary{background:#8ce0d0;color:#103741}.btn-outline{background:#fff;color:#2642a2;border-color:#c9d4ed}.btn-primary:hover,.btn-outline:hover{filter:brightness(.95)}.btn:focus-visible,input:focus-visible{outline:3px solid #69b4fb;outline-offset:2px}.hero .buttons{display:flex;flex-wrap:wrap;gap:10px}.main{padding:36px 0 58px}.section-title{font-size:27px;letter-spacing:-1px;margin:4px 0}.section-sub{color:var(--muted);margin:5px 0 20px;font-size:14px}.panel{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 14px 38px #263b6b0b}.upload{display:grid;grid-template-columns:1fr auto;gap:15px;align-items:end}.upload label{display:block;font-weight:750;margin-bottom:8px}.upload input{width:100%;border:1px dashed #a7b7d2;border-radius:12px;padding:15px;background:#f9fbff;font:inherit;font-size:13px}.upload .controls{display:flex;flex-wrap:wrap;gap:8px}.note{color:var(--muted);font-size:12px;margin-top:13px}.status{font-size:13px;color:var(--teal);font-weight:750;min-height:24px}.status.err{color:#a93838}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}.stat{border:1px solid var(--line);border-radius:14px;padding:17px;background:#f8faff}.stat small{display:block;color:var(--muted);font-size:12px;font-weight:650}.stat strong{display:block;color:var(--navy);font-size:clamp(20px,3vw,28px);margin-top:5px;letter-spacing:-.7px}.stat span{font-size:11px;color:#647590}.table-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:20px 0 12px}.table-head h3{margin:0;font-size:16px}.scroller{overflow:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;font-size:13px;min-width:670px}th,td{text-align:left;padding:12px 13px;border-bottom:1px solid #e8edf5}th{background:#eaf0fb;color:#344767;font-size:12px}tr:last-child td{border-bottom:0}.badge{border-radius:22px;padding:4px 8px;font-size:11px;white-space:nowrap;background:#e2f5eb;color:#246a48;font-weight:780}.badge.warn{background:#fff0d7;color:#9a581a}.empty{padding:28px;color:var(--muted);text-align:center}.pricing{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 28px}.plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.plan h3{margin:0 0 6px}.price{font-size:27px;font-weight:900;color:var(--navy);letter-spacing:-1px}.plan p{font-size:13px;color:var(--muted);min-height:65px}.plan ul{margin:10px 0 0;padding-left:18px;font-size:13px}.plan li{margin:6px 0}.plan.featured{border-color:#779ae4;box-shadow:0 10px 30px #324cb01c}.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:14px 0 26px}.step{background:#eef2fa;border-radius:15px;padding:18px;font-size:14px}.step strong{display:block;margin-bottom:6px}.step b{color:var(--blue);font-size:12px}footer{background:#172444;color:#cbd8f0;padding:26px 0;font-size:12px}footer strong{color:#fff}.legal{padding:14px 0 25px;font-size:12px;color:#697990}.money-note{background:#e8f6f1;border:1px solid #bce0d3;border-radius:12px;color:#19574b;padding:12px 15px;margin-top:15px;font-size:12px}.hidden{display:none!important}@media(max-width:730px){.upload,.stats,.pricing,.steps{grid-template-columns:1fr}.hero{padding:42px 0}.panel{padding:17px}.stat{padding:14px}.stat strong{font-size:22px}.section-title{font-size:24px}.upload .controls{width:100%}.upload .controls button{flex:1}.table-head{align-items:flex-start;flex-direction:column}.nav-note{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="mark"><span class="logo">↗</span>한눈업무 <span style="color:#9daee9;font-size:12px">시제품</span></div><span class="nav-note">혜택지도와 별개인 신규 사업 테스트</span></div></header>
+<section class="hero"><div class="wrap"><div class="eyebrow">독립 신규사업 · 업무 자동화 서비스</div><h1>매일 반복되는 주문서 정리,<br>한 번의 클릭으로 줄여보세요.</h1><p>중소 쇼핑몰·소상공인을 위한 첫 번째 시제품입니다. 여러 채널의 주문서를 정리하고 중복 주문을 표시해 검토 시간을 줄이는 기능을 직접 시험할 수 있습니다.</p><div class="pills"><span class="pill">별도 가입 없이 사용</span><span class="pill">파일을 서버에 전송하지 않음</span><span class="pill">주문 중복 추정 표시</span><span class="pill">수식 실행 위험 문구 방지 후 CSV 저장</span></div><div class="buttons"><a class="btn btn-primary" href="#demo">작동 데모 실행 ↓</a><a class="btn btn-outline" href="#pricing">서비스 구성 확인</a><a class="btn btn-outline" href="https://github.com/vip8184-dev/han-nun-work-demo/issues/new?template=consultation.yml" rel="noopener noreferrer" target="_blank">비식별 공개 상담 요청 ↗</a></div></div></section>
+<main class="main wrap"><section id="demo"><h2 class="section-title">주문서 정리 기능을 실제로 시험해 보세요</h2><p class="section-sub">이 시제품은 초기 개념 검증용입니다. 입력 파일은 브라우저 안에서만 처리되며, 주문을 실제로 발주·결제·수정하지 않습니다.</p><div class="panel"><div class="upload"><div><label for="csv">CSV 파일 선택 (UTF-8)</label><input id="csv" type="file" accept=".csv,text/csv" aria-describedby="format-note"></div><div class="controls"><button class="btn btn-primary" type="button" id="sample">가상 주문 예시 실행</button><button class="btn btn-outline" type="button" id="export" disabled>검토용 CSV 저장</button></div></div><p class="note" id="format-note">필수 열: <b>주문번호</b>. 선택 열: 결제금액, 주문상태, 채널, 상품. 실제 고객 개인정보는 넣지 마시고 우선 익명화된 파일로 시험하세요.</p><div id="status" class="status" role="status" aria-live="polite">가상 주문 예시를 눌러 작동 상태를 확인하세요.</div><div class="stats" id="stats"><div class="stat"><small>고유 주문번호</small><strong id="unique">—</strong><span>파일 내 중복 추정 제외</span></div><div class="stat"><small>중복 추정 행</small><strong id="duplicates">—</strong><span>자동 삭제하지 않고 표시</span></div><div class="stat"><small>주문금액 단순 합계</small><strong id="amount">—</strong><span>취소 포함 가능 · 실제 매출/정산 아님</span></div></div><div class="money-note">이 수치는 회계상의 순매출이 아닙니다. 환불·할인·수수료·배송비와 실제 입금액은 별도로 대조해야 합니다.</div><div class="table-head"><h3>검사 결과 미리보기</h3><small id="result-summary" style="color:#60708c">입력 전</small></div><div class="scroller" id="preview"><div class="empty">주문서를 올리거나 가상 주문 예시를 선택하세요.</div></div></div></section>
+<section id="pricing" style="margin-top:52px"><h2 class="section-title">서비스 구성·시험 제안가</h2><p class="section-sub">아래 금액은 현재 확인 중인 <b>시범 제안가</b>입니다. 의뢰 범위와 검수 조건 확인 후 최종 견적을 제시합니다.</p><div class="pricing"><article class="plan"><h3>입문형</h3><div class="price">99,000원</div><p>주문서·명단·상품 목록 등 단일 파일의 반복 정리 작업을 자동화합니다.</p><ul><li>자동화 1건</li><li>기본 입력 검증</li><li>검사 결과 샘플 제공</li></ul></article><article class="plan featured"><h3>실무형</h3><div class="price">299,000원</div><p>두 개 이상의 파일·업무를 합쳐 매일 쓰는 보고서와 정리 결과를 제작합니다.</p><ul><li>자동화 흐름 최대 3개</li><li>고객 서식 맞춤 제작</li><li>오류·예외 검수 포함</li></ul></article><article class="plan"><h3>유지관리형</h3><div class="price">월 49,000원부터</div><p>이미 납품한 자동화 도구의 소규모 서식 변경과 동작 점검을 유지합니다.</p><ul><li>동작 상태 월 1회 확인</li><li>작은 수정 요청 범위 협의</li><li>외부 API·AI 사용료 별도</li></ul></article></div><h2 class="section-title">사업 실험의 진행 순서</h2><div class="steps"><div class="step"><b>1. 고객 문제 검증</b><strong>고객이 반복하는 업무를 듣는다</strong>실제로 시간을 낭비하는 작업 1개를 골라 해결 전후를 비교합니다.</div><div class="step"><b>2. 유료 제작 검증</b><strong>범위·가격·납품 기준 합의</strong>샘플로 동작을 보인 뒤 계약 조건을 확정합니다. 개별 계약과 데이터 처리는 의뢰 범위와 조건을 확인한 뒤 진행합니다.</div><div class="step"><b>3. 반복 매출 검증</b><strong>고객이 다시 결제하는가</strong>납품 이후 유지관리 의사가 있는지 확인하고, 실제 입금액에서 비용을 뺍니다.</div></div></section>
+<div class="legal"><p><strong>문의:</strong> <a href="https://github.com/vip8184-dev/han-nun-work-demo/issues/new?template=consultation.yml" rel="noopener noreferrer" target="_blank">공개 업무자동화 상담 등록</a> (GitHub 계정 필요). 해당 글은 공개되므로 연락처·사업자번호·주문내역·비밀번호 등 개인정보를 입력하지 마세요. 비공개 상담·정산 경로는 준비 중입니다.</p>운영 원칙: 개인정보가 담긴 원본 주문서, 외부 서비스 계정 비밀번호, API 키는 채팅이나 시험 파일에 공유하지 않습니다. 실제 고객 데이터 연동은 접근 권한·위탁 계약·개인정보 처리 범위를 검토한 뒤 수행합니다.</div></main>
+<footer><div class="wrap"><strong>한눈업무 — 신규 사업 검증 시제품</strong><div>공개 시연 페이지로 실제 발주·결제·고객정보를 수집하지 않습니다. 기존 혜택지도 서비스와 연결되지 않습니다.</div></div></footer>
+<script>
+'use strict';
+function parseCSV(text){
+  const input=String(text??'').replace(/^\uFEFF/,'');
+  const rows=[];let row=[],field='',quoted=false;
+  for(let i=0;i<input.length;i++){
+    const c=input[i];
+    if(quoted){if(c==='"'&&input[i+1]==='"'){field+='"';i++;}else if(c==='"'){quoted=false;}else{field+=c;}}
+    else if(c==='"'&&field===''){quoted=true;}
+    else if(c===','){row.push(field);field='';}
+    else if(c==='\n'||c==='\r'){
+      if(c==='\r'&&input[i+1]==='\n')i++;
+      row.push(field);if(row.some(x=>x!==''))rows.push(row);row=[];field='';
+    }else{field+=c;}
+  }
+  if(quoted)throw new Error('CSV 따옴표가 닫히지 않았습니다.');
+  row.push(field);if(row.some(x=>x!==''))rows.push(row);
+  return rows;
+}
+function findColumn(headers,aliases){const norm=s=>String(s||'').toLowerCase().replace(/[\s_\-]/g,'');return headers.findIndex(h=>aliases.map(norm).includes(norm(h)));}
+function parseAmount(s){const trimmed=String(s||'').trim();if(!trimmed)return 0;const normalized=trimmed.replace(/[\s,₩원]/g,'');return /^-?\d+(?:\.\d+)?$/.test(normalized)?Number(normalized):null;}
+function csvQuote(s){const v=String(s??'');return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}
+// Guard spreadsheet formula injection when customers open an exported CSV.
+// This changes only the review export, never the input, stored text or display.
+function formulaSafe(s){
+  const v=String(s??'');
+  const pureNegativeNumber=/^\s*-\d+(?:\.\d+)?\s*$/.test(v);
+  return (/^\s*[=+@]/.test(v) || (/^\s*-/.test(v) && !pureNegativeNumber) || /^[\t\r\n]/.test(v)) ? "'"+v : v;
+}
+function cleanCsv(rows){return '\uFEFF'+rows.map(row=>row.map(v=>csvQuote(formulaSafe(v))).join(',')).join('\r\n')+'\r\n';}
+function analyzeCSV(text){
+  const raw=parseCSV(text);if(raw.length<2)throw new Error('제목 행과 데이터 행이 필요합니다.');
+  const headers=raw[0].map(String);const orderIdx=findColumn(headers,['주문번호','주문ID','orderid','주문아이디','주문고유번호']);
+  if(orderIdx<0)throw new Error('주문번호 열을 찾지 못했습니다.');
+  const amountIdx=findColumn(headers,['결제금액','주문금액','판매금액','금액','amount','price']);
+  const statusIdx=findColumn(headers,['상태','주문상태','배송상태','status']);
+  const channelIdx=findColumn(headers,['판매채널','채널','channel','market']);
+  const seen=new Set(),rows=[];let duplicateCount=0,amount=0,missing=0,invalidAmount=0;
+  raw.slice(1).forEach((r,i)=>{
+    const values=headers.map((_,j)=>(r[j]??'').trim());const id=values[orderIdx];
+    const duplicate=id!==''&&seen.has(id);if(id)seen.add(id);else missing++;
+    if(duplicate)duplicateCount++;
+    const parsed=amountIdx>=0?parseAmount(values[amountIdx]):null;
+    if(amountIdx>=0&&parsed===null)invalidAmount++;
+    if(!duplicate&&id&&parsed!==null&&parsed!==undefined)amount+=parsed;
+    rows.push({values,id,duplicate,missing:!id,amount:parsed,status:statusIdx<0?'':values[statusIdx],channel:channelIdx<0?'':values[channelIdx],line:i+2});
+  });
+  return {headers,rows,unique:seen.size,duplicateCount,amount,missing,invalidAmount,amountAvailable:amountIdx>=0};
+}
+const ui={file:document.getElementById('csv'),sample:document.getElementById('sample'),export:document.getElementById('export'),status:document.getElementById('status'),unique:document.getElementById('unique'),duplicates:document.getElementById('duplicates'),amount:document.getElementById('amount'),preview:document.getElementById('preview'),summary:document.getElementById('result-summary')};
+let current=null;const example='주문번호,채널,상품,결제금액,상태\nB-101,스마트스토어,수납함,24900,신규\nB-102,쿠팡,조명,38900,발송대기\nB-103,스마트스토어,발매트,15000,완료\nB-102,쿠팡,조명,38900,발송대기\nB-104,카페24,행거,57000,완료\nB-105,스마트스토어,수납함,24900,취소';
+function escapeHTML(x){return String(x??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function showError(message){current=null;ui.status.textContent=message;ui.status.classList.add('err');ui.export.disabled=true;}
+function render(text){try{
+  const result=analyzeCSV(text);current=result;
+  ui.status.classList.remove('err');ui.status.textContent='검토용 정리가 완료되었습니다. 중복 추정 행은 삭제하지 않았습니다.';
+  ui.unique.textContent=result.unique.toLocaleString('ko-KR')+'건';ui.duplicates.textContent=result.duplicateCount.toLocaleString('ko-KR')+'건';
+  ui.amount.textContent=result.amountAvailable?Math.round(result.amount).toLocaleString('ko-KR')+'원':'금액 열 없음';
+  ui.summary.textContent=`전체 ${result.rows.length}행 · 빈 주문번호 ${result.missing}건 · 잘못된 금액 ${result.invalidAmount}건`;
+  let html='<table><thead><tr>'+result.headers.map(h=>'<th>'+escapeHTML(h)+'</th>').join('')+'<th>검토 상태</th></tr></thead><tbody>';
+  html+=result.rows.slice(0,120).map(r=>'<tr>'+r.values.map(v=>'<td>'+escapeHTML(v)+'</td>').join('')+'<td><span class="badge'+(r.duplicate||r.missing?' warn':'')+'">'+(r.missing?'주문번호 없음':r.duplicate?'중복 추정':'확인 대상')+'</span></td></tr>').join('');
+  ui.preview.innerHTML=html+'</tbody></table>';
+  ui.export.disabled=false;
+}catch(e){showError(e.message||'CSV를 읽을 수 없습니다.');}}
+ui.sample.addEventListener('click',()=>render(example));
+ui.file.addEventListener('change',async()=>{const f=ui.file.files?.[0];if(!f)return;if(f.size>3_000_000){showError('3MB 이하의 시험 파일만 지원합니다.');return;}try{render(await f.text());}catch(e){showError('파일을 읽을 수 없습니다.');}});
+ui.export.addEventListener('click',()=>{if(!current)return;const rows=[current.headers.concat(['검토 상태'])].concat(current.rows.map(r=>r.values.concat([r.missing?'주문번호 없음':r.duplicate?'중복 추정':'확인 대상'])));const csv=cleanCsv(rows);const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=u;a.download='주문서_검토결과.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);});
+</script>
+</body>
+</html>
